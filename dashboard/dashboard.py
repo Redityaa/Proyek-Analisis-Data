@@ -4,6 +4,7 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 import plotly.express as px
+import os
 
 # ==============================================================================
 # 1. KONFIGURASI HALAMAN
@@ -19,6 +20,9 @@ st.set_page_config(
 # ==============================================================================
 @st.cache_data
 def load_data():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Menggabungkan path direktori dengan nama file CSV
+    csv_path = os.path.join(script_dir, "main_data.csv")
     # Membaca data dari file CSV yang sudah bersih
     data = pd.read_csv("main_data.csv")
     
