@@ -24,7 +24,7 @@ def load_data():
     # Menggabungkan path direktori dengan nama file CSV
     csv_path = os.path.join(script_dir, "main_data.csv")
     # Membaca data dari file CSV yang sudah bersih
-    data = pd.read_csv("main_data.csv")
+    data = pd.read_csv(csv_path)
     
     # Memastikan kolom datetime bertipe datetime
     data['datetime'] = pd.to_datetime(data['datetime'])
